@@ -28,43 +28,36 @@
   </head>
   <body>
     <header id="main-header">
-      <div class="header-content container">
+      <div class="header-content">
         <a href="#hero" class="logo">Dyonathan Cox</a>
+
         <nav>
-          <button id="mobile-menu-button">
-            <svg viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-          </button>
-          <ul id="nav-menu-desktop">
-            <!-- ID alterado para não conflitar com mobile-menu -->
+          <ul>
             <li><a href="#hero" class="nav-link">Início</a></li>
-            <li><a href="#sobre" class="nav-link">Sobre Mim</a></li>
-            <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+            <li><a href="#sobre" class="nav-link">Sobre</a></li>
             <li><a href="#projetos" class="nav-link">Projetos</a></li>
             <li><a href="#formacao" class="nav-link">Formação</a></li>
             <li><a href="#contato" class="nav-link">Contato</a></li>
           </ul>
         </nav>
-      </div>
-      <div id="mobile-menu">
-        <ul>
-          <li><a href="#hero" class="nav-link-mobile">Início</a></li>
-          <li><a href="#sobre" class="nav-link-mobile">Sobre Mim</a></li>
-          <li>
-            <a href="#habilidades" class="nav-link-mobile">Habilidades</a>
-          </li>
-          <li><a href="#projetos" class="nav-link-mobile">Projetos</a></li>
-          <li><a href="#formacao" class="nav-link-mobile">Formação</a></li>
-          <li><a href="#contato" class="nav-link-mobile">Contato</a></li>
-        </ul>
+
+        <button id="mobile-menu-button" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
+
+    <div id="mobile-menu">
+      <ul>
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
 
     <section id="hero" class="hero-custom-design">
       <img

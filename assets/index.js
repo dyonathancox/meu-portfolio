@@ -1,3 +1,4 @@
+// --- MODAL DE PROJETOS (SEU CÓDIGO - MANTIDO) ---
 const projectsData = {
   1: {
     id: 1,
@@ -32,11 +33,9 @@ const projectsData = {
 };
 
 let currentProjectId = null;
-
 const modal = document.getElementById('projectModal');
 const closeModalButton = document.getElementById('closeModalButton');
 const openModalButtons = document.querySelectorAll('.open-modal-button');
-
 const modalTitle = document.getElementById('modalTitle');
 const modalImage = document.getElementById('modalImage');
 const modalTechsContainer = document.getElementById('modalTechs');
@@ -93,59 +92,100 @@ window.addEventListener('keydown', (event) => {
     closeProjectModal();
 });
 
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-const navMenuDesktop = document.getElementById('nav-menu-desktop');
-
-mobileMenuButton.addEventListener('click', () => {
-  const isHidden =
-    mobileMenu.style.display === 'none' || mobileMenu.style.display === '';
-  mobileMenu.style.display = isHidden ? 'block' : 'none';
-});
-
-mobileMenu.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    mobileMenu.style.display = 'none';
-  });
-});
-
-document.addEventListener('click', function (event) {
-  const mainHeader = document.getElementById('main-header');
-  if (
-    !mainHeader.contains(event.target) &&
-    mobileMenu.style.display === 'block'
-  ) {
-    mobileMenu.style.display = 'none';
-  }
-});
-
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-const mainHeader = document.getElementById('main-header');
-let lastScrollTop = 0;
-window.addEventListener('scroll', function () {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop && scrollTop > 80) {
-    mainHeader.style.top = '-100px';
-  } else {
-    mainHeader.style.top = '0';
-  }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
-
-const sectionsToAnimate = document.querySelectorAll('main section[id]');
-const animationObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-up-active');
-        observer.unobserve(entry.target);
+document.addEventListener('DOMContentLoaded', () => {
+  // --- 1. Esconder Header ao Rolar ---
+  const header = document.getElementById('main-header');
+  if (header) {
+    // Verifica se o header existe
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+        // Rolando para baixo
+        header.classList.add('header-hidden');
+      } else {
+        // Rolando para cima
+        header.classList.remove('header-hidden');
       }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
-  },
-  { threshold: 0.1 }
-);
-sectionsToAnimate.forEach((section) => {
-  section.classList.add('fade-in-up-initial');
-  animationObserver.observe(section);
+  }
+
+  // --- 2. Indicar Seção Ativa ---
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('#main-header .nav-link'); // Seleciona apenas links do header principal
+
+  if (sections.length > 0 && navLinks.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  }
+
+  // --- 3. Menu Mobile Profissional ---
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuButton && mobileMenu) {
+    // Verifica se os elementos existem
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenuButton.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenuButton.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+  }
 });
+
+// --- ATUALIZAÇÃO DO ANO NO RODAPÉ (SEU CÓDIGO - MANTIDO) ---
+const currentYearEl = document.getElementById('currentYear');
+if (currentYearEl) {
+  currentYearEl.textContent = new Date().getFullYear();
+}
+
+// --- ANIMAÇÃO DE ENTRADA DAS SEÇÕES (SEU CÓDIGO - MANTIDO) ---
+const sectionsToAnimate = document.querySelectorAll('main section[id]');
+if (sectionsToAnimate.length > 0) {
+  const animationObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up-active');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  sectionsToAnimate.forEach((section) => {
+    section.classList.add('fade-in-up-initial');
+    animationObserver.observe(section);
+  });
+}

@@ -3,86 +3,154 @@
   backdrop-filter: blur(10px);
   font-size: var(--font-base);
   color: white;
-  padding: 1.6rem;
+  padding: 1.6rem 2.4rem; /* Adicionado padding lateral */
   position: fixed;
   width: 100%;
   z-index: 40;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: top 0.3s ease-in-out;
+  transition: top 0.4s ease-in-out; /* Transição mais suave */
   top: 0;
-
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .logo {
-    font-size: var(--font-large);
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-  }
-
-  nav {
-    ul {
-      display: flex;
-      list-style: none;
-    }
-
-    .nav-link {
-      padding: 0.8rem 1.6rem;
-      border-radius: 0.6rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      color: white;
-      text-decoration: none;
-      margin-left: 0.8rem;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
-  }
 }
 
+/* Classe para esconder o header ao rolar para baixo */
+#main-header.header-hidden {
+  top: -100px; /* Esconde o menu para cima */
+}
+
+#main-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px; /* Largura máxima para o conteúdo do header */
+}
+
+#main-header .logo {
+  font-size: var(--font-large);
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+#main-header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-header .nav-link {
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #cbd5e0; /* Cor um pouco mais suave para links inativos */
+  text-decoration: none;
+  margin-left: 0.8rem;
+  font-weight: 500;
+}
+
+#main-header .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Estilo para o link da seção ATIVA */
+#main-header .nav-link.active {
+  background-color: #e53e3e; /* Cor de destaque do seu tema */
+  color: white;
+  font-weight: 600;
+}
+
+/* ======================================== */
+/* ===== MENU MOBILE PROFISSIONAL ===== */
+/* ======================================== */
+
 #mobile-menu-button {
-  display: none;
+  display: none; /* Escondido em telas grandes */
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
+  z-index: 99;
+  width: 30px;
+  height: 24px;
+  position: relative;
+}
 
-  svg {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
+#mobile-menu-button span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#mobile-menu-button span:nth-child(1) {
+  top: 0;
+}
+#mobile-menu-button span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#mobile-menu-button span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Animação do ícone Hambúrguer para "X" */
+#mobile-menu-button.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+#mobile-menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+#mobile-menu-button.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 #mobile-menu {
-  display: none;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px; /* Largura do menu */
+  height: 100vh;
   background-color: #1f2937;
+  padding-top: 8rem;
+  transform: translateX(100%); /* Começa fora da tela */
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Transição suave */
+  z-index: 98;
+}
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.8rem 0;
-    list-style: none;
+#mobile-menu.open {
+  transform: translateX(0); /* Traz o menu para a tela */
+}
 
-    a {
-      display: block;
-      padding: 0.8rem 1.6rem;
-      font-size: var(--font-small);
-      color: white;
-      text-decoration: none;
-      width: 100%;
-      text-align: center;
+#mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-      &:hover {
-        background-color: #374151;
-      }
-    }
+#mobile-menu a {
+  display: block;
+  padding: 1.6rem 2.4rem;
+  font-size: var(--font-base);
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#mobile-menu a:hover {
+  background-color: #374151;
+}
+
+@media (max-width: 768px) {
+  #main-header nav {
+    display: none; /* Esconde a navegação de desktop */
+  }
+  #mobile-menu-button {
+    display: block; /* Mostra o botão hambúrguer */
   }
 }
