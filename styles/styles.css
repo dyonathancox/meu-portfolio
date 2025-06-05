@@ -8,7 +8,6 @@
 @import url('./contact.css');
 @import url('./footer.css');
 
-/* Reset básico e configurações globais */
 *,
 *::before,
 *::after {
@@ -18,10 +17,7 @@
 }
 
 :root {
-  font-size: 62.5%; /* 10px base para facilitar o uso de rem */
-
-  /* Valores originais multiplicados por 1.6 para manter o tamanho visual */
-  /* Ex: 1.4rem (original, base 16px) = 22.4px. Novo: 2.24rem * 10px = 22.4px */
+  font-size: 62.5%;
   --font-small: 1.4rem;
   --font-base: 1.6rem;
   --font-medium: 1.8rem;
@@ -39,17 +35,18 @@ body {
   color: #212529;
   line-height: 1.6;
 }
+
 .layout-width {
   max-width: 1120px;
   margin: 0 auto;
 }
 
-/* Estilos Gerais para Seções */
 main section {
   padding-top: 6.4rem;
   padding-bottom: 6.4rem;
   scroll-margin-top: 80px;
 }
+
 .section-title {
   font-size: 3.6rem;
   font-weight: 700;
@@ -58,146 +55,124 @@ main section {
   color: #343a40;
 }
 
-.gemini-buttons-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem; /* Original: 1rem */
-  margin-bottom: 2.4rem; /* Original: 1.5rem */
-}
-#geminiResultArea {
-  display: none;
-}
-#geminiResultArea.visible {
-  display: block;
-}
-
-.gemini-output {
-  margin-top: 1.6rem; /* Original: 1rem (comentário original indicava 1.5rem) */
-  padding: 1.6rem; /* Original: 1rem */
-  background-color: #f0f9ff;
-  border-left: 4px solid #3b82f6;
-  border-radius: 0.6rem; /* Original: 0.375rem */
-  font-size: 1.44rem; /* Original: 0.9rem */
-  line-height: 1.6;
-  white-space: pre-wrap;
-}
-.modal-links-container {
-  margin-top: 3.2rem; /* Original: 2rem */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.6rem; /* Original: 1rem */
-  justify-content: center;
-}
-.loading-spinner {
-  display: inline-block;
-  width: 1.2em; /* Unidade 'em' é relativa ao font-size do elemento pai, não diretamente ao :root rem */
-  height: 1.2em; /* Unidade 'em' é relativa ao font-size do elemento pai, não diretamente ao :root rem */
-  border: 2px solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: spinner-border 0.75s linear infinite;
-}
-.hidden {
-  display: none !important;
-}
-
 @keyframes spinner-border {
   to {
     transform: rotate(360deg);
   }
 }
 
-/* Animações de Entrada */
 .fade-in-up-initial {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
 .fade-in-up-active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Media Queries para Responsividade */
 @media (max-width: 767px) {
-  #main-header nav ul {
-    display: none;
+  #main-header {
+    nav {
+      ul {
+        display: none;
+      }
+    }
   }
+
   #mobile-menu-button {
     display: block;
   }
 
-  .hero-custom-design .top-intro h1 {
-    font-size: clamp(
-      3.2rem,
-      8vw,
-      4.8rem
-    ); /* Original: clamp(2rem, 8vw, 3rem) */
-  }
-  .hero-custom-design .top-intro p {
-    font-size: clamp(
-      1.6rem,
-      3vw,
-      2rem
-    ); /* Original: clamp(1rem, 3vw, 1.25rem) */
-  }
-  .hero-custom-design .grupo-2 > p {
-    font-size: clamp(
-      1.28rem,
-      2.5vw,
-      1.6rem
-    ); /* Original: clamp(0.8rem, 2.5vw, 1rem) */
-  }
-  .hero-custom-design .cards-tecno {
-    gap: 0.8rem; /* Original: 0.5rem */
-  }
-  .hero-custom-design .tecno {
-    padding: 1.12rem 1.92rem; /* Original: 0.7rem 1.2rem */
+  .hero-custom-design {
+    .top-intro {
+      h1 {
+        font-size: clamp(3.2rem, 8vw, 4.8rem);
+      }
+
+      p {
+        font-size: clamp(1.6rem, 3vw, 2rem);
+      }
+    }
+
+    .grupo-2 > p {
+      font-size: clamp(1.28rem, 2.5vw, 1.6rem);
+    }
+
+    .cards-tecno {
+      gap: 0.8rem;
+    }
+
+    .tecno {
+      padding: 1.12rem 1.92rem;
+    }
   }
 }
 
 @media (min-width: 768px) {
-  #sobre .grid-sobre {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  #sobre .perfil-sobre {
-    width: 25.6rem; /* Original: 16rem */
-    height: 25.6rem; /* Original: 16rem */
-    margin-left: 0;
-  }
-  #sobre .social-links {
-    justify-content: flex-start;
+  #sobre {
+    .grid-sobre {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .perfil-sobre {
+      width: 25.6rem;
+      height: 25.6rem;
+      margin-left: 0;
+    }
+
+    .social-links {
+      justify-content: flex-start;
+    }
   }
 
-  #habilidades .grid-habilidades {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  #projetos .grid-projetos {
-    grid-template-columns: repeat(2, 1fr);
+  #habilidades {
+    .grid-habilidades {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
-  #contato .contato-botoes {
-    flex-direction: row;
-    gap: 2.4rem; /* Original: 1.5rem */
+  #projetos {
+    .grid-projetos {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
+
+  #contato {
+    .contato-botoes {
+      flex-direction: row;
+      gap: 2.4rem;
+    }
+  }
+
   .gemini-buttons-container {
-    flex-direction: row; /* Esta sobrescrita de direção é mantida */
+    flex-direction: row;
   }
+
   .modal-links-container {
-    justify-content: flex-start; /* Esta sobrescrita é mantida */
+    justify-content: flex-start;
   }
 }
 
 @media (min-width: 1024px) {
-  #habilidades .grid-habilidades {
-    grid-template-columns: repeat(4, 1fr);
+  #habilidades {
+    .grid-habilidades {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
-  #projetos .grid-projetos {
-    grid-template-columns: repeat(3, 1fr);
+
+  #projetos {
+    .grid-projetos {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
+
 @media (min-width: 1280px) {
-  #habilidades .grid-habilidades {
-    grid-template-columns: repeat(4, 1fr);
+  #habilidades {
+    .grid-habilidades {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

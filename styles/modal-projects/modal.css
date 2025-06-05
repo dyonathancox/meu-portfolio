@@ -85,6 +85,14 @@
         overflow-y: auto;
         padding-right: 0.8rem;
       }
+
+      .modal-links-container {
+        margin-top: 3.2rem; /* Original: 2rem */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.6rem; /* Original: 1rem */
+        justify-content: center;
+      }
     }
   }
 }
