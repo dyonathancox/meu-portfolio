@@ -1,0 +1,45 @@
+.button {
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.8rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  width: 100%;
+
+  &.primary-button,
+  &.gemini-button {
+    background-color: #e53e3e;
+    color: white;
+    border-color: #e53e3e;
+
+    &:hover {
+      background-color: #c53030;
+      border-color: #c53030;
+      transform: translateY(-2px);
+    }
+  }
+
+  &.secondary-button {
+    background-color: transparent;
+    color: #e53e3e;
+    border-color: #e53e3e;
+
+    &:hover {
+      background-color: #e53e3e;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+
+  &.w-auto {
+    width: auto;
+    font-size: var(--font-base);
+  }
+}

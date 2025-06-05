@@ -1,0 +1,50 @@
+#sobre {
+  scroll-margin-top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & .grid-sobre {
+    display: grid;
+    gap: 1.6rem;
+    align-items: center;
+
+    .perfil-sobre {
+      border-radius: 50%;
+      width: 19.2rem;
+      height: 19.2rem;
+      margin: 0 auto;
+      border: 0.1rem dashed #e53e3e7e;
+      margin-bottom: 2.4rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      object-fit: cover;
+    }
+  }
+
+  .texto-sobre {
+    p {
+      font-size: 1.8rem;
+      margin-bottom: 1.6rem;
+      line-height: 1.75;
+    }
+    .social-links {
+      display: flex;
+      gap: 1.6rem;
+      margin-top: 2.4rem;
+
+      & a {
+        color: #4b5563;
+        transition: color 0.3s ease;
+
+        & i {
+          font-size: var(--font-large);
+        }
+      }
+      & a:hover {
+        color: #e53e3e;
+      }
+    }
+  }
+}
