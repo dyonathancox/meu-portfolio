@@ -1,5 +1,5 @@
 .hero-custom-design {
-  background-color: #010409;
+  background-color: #292c34;
   position: relative;
   overflow: hidden;
   color: #a0aec0;
@@ -34,15 +34,15 @@
   &::before {
     background-image: repeating-linear-gradient(
         90deg,
-        rgba(238, 69, 201, 0.5) 0,
-        rgba(229, 62, 62, 0.5) 50px,
+        rgba(249, 253, 41, 0.637) 0,
+        rgba(238, 69, 201, 0.5) 50px,
         transparent 8rem,
         transparent 16rem
       ),
       repeating-linear-gradient(
         90deg,
-        rgba(238, 69, 201, 0.5) 0,
-        rgba(229, 62, 62, 0.5) 50px,
+        rgba(249, 253, 41, 0.678) 0,
+        rgba(238, 69, 201, 0.5) 50px,
         transparent 12rem,
         transparent 28rem
       );
@@ -54,15 +54,15 @@
   &::after {
     background-image: repeating-linear-gradient(
         90deg,
-        rgba(230, 17, 17, 0.185) 0,
-        rgba(107, 25, 129, 0.692) 8rem,
+        rgba(249, 253, 41, 0.678) 0,
+        rgba(238, 69, 201, 0.5) 8rem,
         transparent 4rem,
         transparent 19rem
       ),
       repeating-linear-gradient(
         90deg,
-        rgba(230, 17, 17, 0.219) 0,
-        rgba(107, 25, 129, 0.692) 7rem,
+        rgba(249, 253, 41, 0.678) 0,
+        rgba(238, 69, 201, 0.5) 8rem,
         transparent 1rem,
         transparent 15rem
       );

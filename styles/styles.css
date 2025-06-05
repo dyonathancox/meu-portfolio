@@ -1,13 +1,3 @@
-@import url('./header.css');
-@import url('./hero-section.css');
-@import url('./about.css');
-@import url('./skills.css');
-@import url('./projects.css');
-@import url('./buttons.css');
-@import url('./trail.css');
-@import url('./contact.css');
-@import url('./footer.css');
-
 *,
 *::before,
 *::after {
