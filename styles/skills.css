@@ -1,43 +1,137 @@
 #habilidades {
   width: 100%;
   margin: 0 auto;
-  /* 1. background-image e attachment REMOVIDOS */
-  background-color: #111827; /* NOVA cor de base, igual ao Hero */
+  background-color: #111827;
   padding: 8rem 0;
   position: relative;
-  overflow: hidden; /* Importante para a animação não vazar */
-}
+  overflow: hidden;
 
-/* 2. A MUDANÇA PRINCIPAL ACONTECE AQUI */
-#habilidades::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  z-index: 1;
-  /* Substituímos a cor sólida pela animação da Aurora */
-  background: radial-gradient(circle at 20% 20%, #e53e3e 0%, transparent 30%),
-              radial-gradient(circle at 80% 30%, #61dafb 0%, transparent 30%),
-              radial-gradient(circle at 50% 70%, #a259ff 0%, transparent 35%);
-  opacity: 0.25; /* Opacidade ajustada para o fundo das habilidades */
-  animation: move-aurora 50s linear infinite;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    z-index: 1;
+    background: radial-gradient(circle at 20% 20%, #e53e3e 0%, transparent 30%),
+      radial-gradient(circle at 80% 30%, #61dafb 0%, transparent 30%),
+      radial-gradient(circle at 50% 70%, #a259ff 0%, transparent 35%);
+    opacity: 0.25;
+    animation: move-aurora 50s linear infinite;
+  }
 
-/* Garante que o conteúdo fique na frente da animação */
-#habilidades .layout-width {
-  position: relative;
-  z-index: 2;
-}
+  .layout-width {
+    position: relative;
+    z-index: 2;
+  }
 
-#habilidades .section-title {
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  font-size: 3.2rem;
-  margin-bottom: 2rem;
-  text-align: center; /* Garantindo alinhamento */
-  padding: 0 2rem; /* Garantindo que não cole nas bordas */
+  .section-title {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .grid-habilidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2.4rem;
+    padding: 0 2.4rem;
+
+    .habilidade-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        transform: translateY(-8px) scale(1.05);
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      &.html:hover {
+        box-shadow: 0 0 25px 5px rgba(227, 79, 38, 0.6);
+      }
+      &.css:hover {
+        box-shadow: 0 0 25px 5px rgba(21, 114, 182, 0.6);
+      }
+      &.js:hover {
+        box-shadow: 0 0 25px 5px rgba(247, 223, 30, 0.6);
+      }
+      &.react:hover {
+        box-shadow: 0 0 25px 5px rgba(97, 218, 251, 0.6);
+      }
+      &.nodejs:hover {
+        box-shadow: 0 0 25px 5px rgba(104, 159, 99, 0.6);
+      }
+      &.git:hover {
+        box-shadow: 0 0 25px 5px rgba(240, 81, 51, 0.6);
+      }
+      &.figma:hover {
+        box-shadow: 0 0 25px 5px rgba(162, 89, 255, 0.6);
+      }
+
+      img {
+        height: 6.4rem;
+        width: 6.4rem;
+        margin-bottom: 1.6rem;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        transform: translateZ(40px);
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #ffffff;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        transform: translateZ(30px);
+      }
+    }
+  }
+
+  /* Responsividade */
+  @media (max-width: 767px) {
+    padding: 6rem 0;
+
+    .section-title,
+    .habilidades-categoria-titulo {
+      padding: 0 1.6rem;
+    }
+
+    .grid-habilidades {
+      display: flex;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      gap: 1.6rem;
+      padding: 1.6rem;
+      margin: 0;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 1.6rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .habilidade-card {
+        flex: 0 0 16rem;
+        width: 16rem;
+        scroll-snap-align: start;
+      }
+    }
+  }
 }
 
 .habilidades-categoria-titulo {
@@ -53,82 +147,15 @@
   margin-right: auto;
 }
 
-#habilidades .grid-habilidades {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 2.4rem;
-  padding: 0 2.4rem;
-}
-
-/* O estilo do .habilidade-card já é perfeito para o novo fundo */
-#habilidades .habilidade-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 1rem;
-  padding: 2.4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
-  transition: all 0.2s ease-out;
-}
-
-/* ... (Todo o restante do seu código, incluindo os :hovers e a media query, continua igual) ... */
-#habilidades .habilidade-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  background-color: rgba(255, 255, 255, 0.2);
-}
-#habilidades .habilidade-card.html:hover { box-shadow: 0 0 25px 5px rgba(227, 79, 38, 0.6); }
-#habilidades .habilidade-card.css:hover { box-shadow: 0 0 25px 5px rgba(21, 114, 182, 0.6); }
-#habilidades .habilidade-card.js:hover { box-shadow: 0 0 25px 5px rgba(247, 223, 30, 0.6); }
-#habilidades .habilidade-card.react:hover { box-shadow: 0 0 25px 5px rgba(97, 218, 251, 0.6); }
-#habilidades .habilidade-card.nodejs:hover { box-shadow: 0 0 25px 5px rgba(104, 159, 99, 0.6); }
-#habilidades .habilidade-card.git:hover { box-shadow: 0 0 25px 5px rgba(240, 81, 51, 0.6); }
-#habilidades .habilidade-card.figma:hover { box-shadow: 0 0 25px 5px rgba(162, 89, 255, 0.6); }
-
-#habilidades .habilidade-card img {
-  height: 6.4rem;
-  width: 6.4rem;
-  margin-bottom: 1.6rem;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-  transform: translateZ(40px);
-}
-#habilidades .habilidade-card h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  transform: translateZ(30px);
-}
-@media (max-width: 767px) {
-  #habilidades { padding: 6rem 0; }
-  #habilidades .section-title, .habilidades-categoria-titulo { padding: 0 1.6rem; }
-  #habilidades .grid-habilidades {
-    display: flex;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    gap: 1.6rem;
-    padding: 1.6rem;
-    margin: 0;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: 1.6rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  #habilidades .grid-habilidades::-webkit-scrollbar { display: none; }
-  #habilidades .habilidade-card {
-    flex: 0 0 16rem;
-    width: 16rem;
-    scroll-snap-align: start;
-  }
-}
-
-/* Lembrete: Garanta que esta animação esteja no seu CSS */
+/* Animação Aurora */
 @keyframes move-aurora {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-25%, -25%) rotate(180deg); }
-  100% { transform: translate(0, 0) rotate(360deg); }
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-25%, -25%) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
 }

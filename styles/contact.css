@@ -1,114 +1,101 @@
-/* =================================================================== */
-/* ===== CSS FINAL PARA A SEÇÃO DE CONTATO (COM ANIMAÇÃO CANVAS) ===== */
-/* =================================================================== */
-
 #contato {
-  /* 1. Estilo base da seção com tema claro */
-  background-color: #ffffff; 
+  background-color: #ffffff;
   color: #1f2937;
   padding: 10rem 2rem;
-  position: relative; /* Essencial para posicionar o canvas e o conteúdo */
+  position: relative;
   overflow: hidden;
   border-top: 1px solid #e5e7eb;
-}
+  .contato-container {
+    position: relative;
+    z-index: 2;
+    max-width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-/* 2. NOVO: Estilo para o Canvas da Animação */
+  .section-title {
+    color: #11182c;
+    text-shadow: none;
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: #4b5563;
+    max-width: 60rem;
+    margin: 0 auto 4rem auto;
+  }
+
+  .contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .contato-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.8rem;
+    padding: 2rem 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    text-decoration: none;
+    color: #1f2937;
+    min-width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 5;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+      .contato-card-icone {
+        transform: scale(1.1);
+      }
+    }
+
+    .contato-card-icone {
+      color: #e53e3e;
+      transition: transform 0.3s ease;
+    }
+
+    .contato-card-texto {
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 0;
+        color: #11182c;
+        text-align: left;
+      }
+
+      span {
+        font-size: 1.4rem;
+        color: #6b7280;
+        text-align: left;
+      }
+    }
+  }
+}
 #contact-canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* Coloca o canvas no fundo */
+  z-index: 1;
 }
 
-/* 3. Garantindo que o conteúdo fique na frente da animação */
-#contato .contato-container {
-  position: relative;
-  z-index: 2; /* Fica na frente do canvas */
-  max-width: 80rem;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* 4. Estilos para os textos e cards (mantendo o design clean) */
-#contato .section-title {
-  color: #11182c;
-  text-shadow: none; /* Sem sombra de texto em fundos claros */
-}
-
-#contato p {
-  font-size: 1.8rem;
-  line-height: 1.7;
-  color: #4b5563;
-  max-width: 60rem;
-  margin: 0 auto 4rem auto;
-}
-
-#contato .contato-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-#contato .contato-card {
-  /* Usamos um fundo branco sólido para garantir a legibilidade sobre a animação */
-  background-color: #ffffff; 
-  border: 1px solid #e5e7eb;
-  border-radius: 0.8rem;
-  padding: 2rem 2.4rem;
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  text-decoration: none;
-  color: #1f2937;
-  min-width: 280px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 5; /* Garante que o card fique sobre a animação */
-}
-
-#contato .contato-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-#contato .contato-card-icone {
-  color: #e53e3e; /* Cor de destaque do seu tema */
-  transition: transform 0.3s ease;
-}
-
-#contato .contato-card:hover .contato-card-icone {
-    transform: scale(1.1);
-}
-
-#contato .contato-card-texto h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin: 0;
-  color: #11182c;
-  text-align: left;
-}
-
-#contato .contato-card-texto span {
-  font-size: 1.4rem;
-  color: #6b7280;
-  text-align: left;
-}
-
-
-/* 5. Responsividade (não muda) */
+/* 5. Responsividade */
 @media (max-width: 768px) {
   #contato {
     padding: 8rem 2rem;
-  }
-  #contato .contato-links {
-    gap: 1.6rem;
+
+    .contato-links {
+      gap: 1.6rem;
+    }
   }
 }
-
-/*
-  AVISO: O seletor #contato::before e a animação @keyframes move-light-contours
-  foram removidos pois não são mais necessários.
-*/
