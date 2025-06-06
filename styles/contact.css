@@ -1,112 +1,114 @@
+/* =================================================================== */
+/* ===== CSS FINAL PARA A SEÇÃO DE CONTATO (COM ANIMAÇÃO CANVAS) ===== */
+/* =================================================================== */
+
 #contato {
-  background-color: #111827;
-  color: #f9fafb;
+  /* 1. Estilo base da seção com tema claro */
+  background-color: #ffffff; 
+  color: #1f2937;
   padding: 10rem 2rem;
-  position: relative;
+  position: relative; /* Essencial para posicionar o canvas e o conteúdo */
   overflow: hidden;
+  border-top: 1px solid #e5e7eb;
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    z-index: 1;
-    background: radial-gradient(circle at 20% 20%, #e53e3e 0%, transparent 30%),
-                radial-gradient(circle at 80% 30%, #60a5fa 0%, transparent 30%),
-                radial-gradient(circle at 50% 70%, #58154a 0%, transparent 35%);
-    opacity: 0.2;
-    animation: move-aurora 60s linear infinite;
-  }
+/* 2. NOVO: Estilo para o Canvas da Animação */
+#contact-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Coloca o canvas no fundo */
+}
 
-  .contato-container {
-    position: relative;
-    z-index: 2;
-    max-width: 80rem;
-    margin: 0 auto;
-    text-align: center;
-  }
+/* 3. Garantindo que o conteúdo fique na frente da animação */
+#contato .contato-container {
+  position: relative;
+  z-index: 2; /* Fica na frente do canvas */
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  .section-title {
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
+/* 4. Estilos para os textos e cards (mantendo o design clean) */
+#contato .section-title {
+  color: #11182c;
+  text-shadow: none; /* Sem sombra de texto em fundos claros */
+}
 
-  p {
-    font-size: 1.8rem;
-    line-height: 1.7;
-    color: #d1d5db;
-    max-width: 60rem;
-    margin: 0 auto 4rem auto;
-  }
+#contato p {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: #4b5563;
+  max-width: 60rem;
+  margin: 0 auto 4rem auto;
+}
 
-  .contato-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
+#contato .contato-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
-  .contato-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 0.8rem;
-    padding: 1.6rem 2.4rem;
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-    text-decoration: none;
-    color: #f9fafb;
-    min-width: 280px;
-    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-    transform-style: preserve-3d;
+#contato .contato-card {
+  /* Usamos um fundo branco sólido para garantir a legibilidade sobre a animação */
+  background-color: #ffffff; 
+  border: 1px solid #e5e7eb;
+  border-radius: 0.8rem;
+  padding: 2rem 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  text-decoration: none;
+  color: #1f2937;
+  min-width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 5; /* Garante que o card fique sobre a animação */
+}
 
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-5px);
+#contato .contato-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
 
-      .contato-card-icone {
-        transform: translateZ(20px) scale(1.1);
-      }
-    }
+#contato .contato-card-icone {
+  color: #e53e3e; /* Cor de destaque do seu tema */
+  transition: transform 0.3s ease;
+}
 
-    .contato-card-icone {
-      color: #93c5fd;
-      transition: transform 0.3s ease;
-      transform: translateZ(20px);
-    }
+#contato .contato-card:hover .contato-card-icone {
+    transform: scale(1.1);
+}
 
-    .contato-card-texto {
-      h3 {
-        font-size: 1.8rem;
-        font-weight: 600;
-        margin: 0;
-        color: #ffffff;
-        text-align: left;
-      }
+#contato .contato-card-texto h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  color: #11182c;
+  text-align: left;
+}
 
-      span {
-        font-size: 1.4rem;
-        color: #9ca3af;
-        text-align: left;
-      }
-    }
-  }
+#contato .contato-card-texto span {
+  font-size: 1.4rem;
+  color: #6b7280;
+  text-align: left;
+}
 
-  @media (max-width: 768px) {
+
+/* 5. Responsividade (não muda) */
+@media (max-width: 768px) {
+  #contato {
     padding: 8rem 2rem;
-
-    .contato-links {
-      gap: 1.6rem;
-    }
+  }
+  #contato .contato-links {
+    gap: 1.6rem;
   }
 }
 
-@keyframes move-aurora {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(-25%, -25%) rotate(180deg); }
-  100% { transform: translate(0, 0) rotate(360deg); }
-}
+/*
+  AVISO: O seletor #contato::before e a animação @keyframes move-light-contours
+  foram removidos pois não são mais necessários.
+*/

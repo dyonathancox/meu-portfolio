@@ -1,154 +1,160 @@
 #formacao {
-  background-color: #f9fafb;
+  /* 1. ADICIONANDO A ANIMAÇÃO DE FUNDO */
+  background-color: #111827;
   padding: 8rem 2rem;
-  overflow-x: hidden;
+  position: relative; /* Essencial para o posicionamento do pseudo-elemento */
+  overflow: hidden; /* Garante que a animação não vaze */
+}
 
-  .section-title {
-    text-align: center;
-    font-size: 3.2rem;
-    margin-bottom: 6rem;
-    font-weight: 700;
-    color: #1f2937;
-  }
+/* A mesma animação do Hero */
+#formacao::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  z-index: 1;
+  background: radial-gradient(circle at 20% 20%, #e53e3e 0%, transparent 30%),
+              radial-gradient(circle at 80% 30%, #60a5fa 0%, transparent 30%),
+              radial-gradient(circle at 50% 70%, #58154a 0%, transparent 35%);
+  opacity: 0.2;
+  animation: move-aurora 60s linear infinite;
+}
 
-  .formacao-container {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
+#formacao .section-title {
+  position: relative; /* Garante que o título fique na frente da animação */
+  z-index: 2;
+  text-align: center;
+  font-size: 3.2rem;
+  margin-bottom: 6rem;
+  font-weight: 700;
+  color: #ffffff; /* 2. Título agora com cor clara */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para legibilidade */
+}
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
-      height: 100%;
-      background-color: #e5e7eb;
-    }
-  }
+.formacao-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Garante que a timeline fique na frente da animação */
+}
 
-  .formacao-item {
-    position: relative;
-    width: calc(50% - 4rem);
-    background-color: white;
-    border-radius: 0.8rem;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 2.4rem;
-    margin-bottom: 4rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Linha da timeline com cor para fundo escuro */
+.formacao-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: #374151; /* Cor mais escura e sutil */
+}
 
-    &.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* 3. A GRANDE MUDANÇA: CARDS EM GLASSMORPHISM */
+.formacao-item {
+  position: relative;
+  width: calc(50% - 4rem);
+  
+  /* Estilo de vidro fosco */
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2.4rem;
+  margin-bottom: 4rem;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+  /* Animação de entrada (mantida) */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
 
-    &:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
+.formacao-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    &:nth-child(odd) {
-      left: calc(50% + 4rem);
-      transition-delay: 0.1s;
+.formacao-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-      &::after {
-        right: 100%;
-        margin-right: 2rem;
-      }
-    }
+/* Cores de texto DENTRO do card ajustadas para o tema escuro */
+.formacao-item h3 {
+  font-size: var(--font-xlarge);
+  font-weight: 600;
+  color: #f9fafb;
+}
+.formacao-data {
+  font-size: var(--font-small);
+  color: #9ca3af;
+  margin-bottom: 0.8rem;
+}
+.formacao-subtitulo {
+  color: #d1d5db;
+  font-size: var(--font-base);
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+.formacao-descricao {
+  margin-top: 1.2rem;
+  color: #adb5bd;
+  line-height: 1.6;
+}
 
-    &:nth-child(even) {
-      left: 0;
-      transition-delay: 0.2s;
+/* Borda do ícone ajustada para o fundo escuro da seção */
+.formacao-icone {
+  /* ... (mantém o posicionamento) ... */
+  border: 4px solid #111827; /* Cor de fundo da seção */
+  /* ... (o resto do estilo do ícone pode ser mantido) ... */
+  position: absolute;
+  top: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e53e3e; /* Usando a cor de destaque principal */
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
 
-      &::after {
-        left: 100%;
-        margin-left: 2rem;
-      }
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 3.2rem;
-      width: 2rem;
-      height: 2px;
-      background-color: #cbd5e0;
-    }
-
-    h3 {
-      font-size: var(--font-xlarge);
-      font-weight: 600;
-      color: #1f2937;
-    }
-
-    .formacao-data {
-      font-size: var(--font-small);
-      color: #6b7280;
-      margin-bottom: 0.8rem;
-    }
-
-    .formacao-subtitulo {
-      color: #4b5563;
-      font-size: var(--font-base);
-      margin-top: 0.4rem;
-      font-weight: 500;
-    }
-
-    .formacao-descricao {
-      margin-top: 1.2rem;
-      color: #4b5563;
-      line-height: 1.6;
-    }
-  }
-
-  .formacao-icone {
+/* Conectores da timeline com cor para fundo escuro */
+.formacao-item::after {
+    background-color: #4b5563;
+    /* ... (resto do estilo do conector mantido) ... */
+    content: '';
     position: absolute;
-    top: 2.4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #1d4ed8;
-    color: white;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 4px solid #f9fafb;
-    z-index: 10;
-  }
+    top: 3.2rem;
+    width: 2rem;
+    height: 2px;
+}
 
-  @media (max-width: 768px) {
-    .formacao-container::before {
-      left: 1.5rem;
-    }
+/* ... (O resto do seu CSS para posicionamento e responsividade pode ser mantido) ... */
+.formacao-item:last-child { margin-bottom: 0; }
+.formacao-item:nth-child(odd) { left: calc(50% + 4rem); transition-delay: 0.1s; }
+.formacao-item:nth-child(even) { left: 0; transition-delay: 0.2s; }
+.formacao-item:nth-child(odd)::after { right: 100%; margin-right: 2rem; }
+.formacao-item:nth-child(even)::after { left: 100%; margin-left: 2rem; }
+@media (max-width: 768px) {
+  .formacao-container::before { left: 1.5rem; }
+  .formacao-item, .formacao-item:nth-child(odd), .formacao-item:nth-child(even) { width: 100%; left: 0; padding-left: 4rem; margin-bottom: 3rem; }
+  .formacao-item::after { display: none; }
+  .formacao-icone { left: -1rem; transform: none; top: 2.4rem; }
+}
 
-    .formacao-item,
-    .formacao-item:nth-child(odd),
-    .formacao-item:nth-child(even) {
-      width: 100%;
-      left: 0;
-      padding-left: 4rem;
-      margin-bottom: 3rem;
 
-      &::after {
-        display: none;
-      }
-    }
-
-    .formacao-icone {
-      left: -1rem;
-      transform: none;
-      top: 2.4rem;
-    }
-  }
+/* Lembrete: Garanta que esta animação esteja no seu CSS */
+@keyframes move-aurora {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-25%, -25%) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
 }

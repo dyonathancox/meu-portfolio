@@ -304,3 +304,114 @@ if (backToTopButton) {
     }
   });
 }
+
+// ===============================================================
+// ===== ANIMAÇÃO DE PARTÍCULAS CONECTADAS PARA A SEÇÃO DE CONTATO =====
+// ===============================================================
+document.addEventListener('DOMContentLoaded', () => {
+
+  const canvas = document.getElementById('contact-canvas');
+  if (!canvas) return; // Se o canvas não existir, não faz nada
+
+  const ctx = canvas.getContext('2d');
+  let particlesArray;
+
+  // Ajusta o tamanho do canvas para o tamanho da seção
+  const contactSection = document.getElementById('contato');
+  canvas.width = contactSection.offsetWidth;
+  canvas.height = contactSection.offsetHeight;
+
+  // --- Parâmetros que você pode ajustar ---
+  const numberOfParticles = 80;
+  const connectDistance = 120;
+  const particleSpeed = 0.5;
+  const particleColor = '#a0aec0';
+  const lineColor = '#cbd5e0';
+  // ------------------------------------
+
+  class Particle {
+    constructor(x, y, directionX, directionY, size, color) {
+      this.x = x;
+      this.y = y;
+      this.directionX = directionX;
+      this.directionY = directionY;
+      this.size = size;
+      this.color = color;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
+
+    update() {
+      if (this.x > canvas.width || this.x < 0) {
+        this.directionX = -this.directionX;
+      }
+      if (this.y > canvas.height || this.y < 0) {
+        this.directionY = -this.directionY;
+      }
+      this.x += this.directionX;
+      this.y += this.directionY;
+      this.draw();
+    }
+  }
+
+  function init() {
+    particlesArray = [];
+    for (let i = 0; i < numberOfParticles; i++) {
+      let size = (Math.random() * 2) + 1;
+      let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
+      let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+      let directionX = (Math.random() * particleSpeed * 2) - particleSpeed;
+      let directionY = (Math.random() * particleSpeed * 2) - particleSpeed;
+      particlesArray.push(new Particle(x, y, directionX, directionY, size, particleColor));
+    }
+  }
+
+  function connect() {
+    for (let a = 0; a < particlesArray.length; a++) {
+      for (let b = a; b < particlesArray.length; b++) {
+        let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
+                       ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+
+        if (distance < (connectDistance * connectDistance)) {
+          let opacity = 1 - (distance / (connectDistance * connectDistance));
+          ctx.strokeStyle = `rgba(${hexToRgb(lineColor)}, ${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+          ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+  
+  function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+      particlesArray[i].update();
+    }
+    connect();
+  }
+  
+  // Helper para converter a cor hex para rgb (necessário para a opacidade da linha)
+  function hexToRgb(hex) {
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
+  }
+
+  // Lida com o redimensionamento da janela
+  window.addEventListener('resize', () => {
+    canvas.width = contactSection.offsetWidth;
+    canvas.height = contactSection.offsetHeight;
+    init();
+  });
+
+  init();
+  animate();
+});
