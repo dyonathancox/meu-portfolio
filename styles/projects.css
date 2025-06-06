@@ -1,60 +1,162 @@
-@import url('./modal-projects/modal.css');
+@import url("./modal-projects/modal.css");
 
 #projetos {
+  background-color: #f4f7f9;
+  padding: 8rem 0;
+
+  .layout-width {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
   .grid-projetos {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3.2rem;
+
+    @media (max-width: 767px) {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 1.6rem;
+      padding: 0 1.6rem;
+      padding-bottom: 1rem;
+      clip-path: inset(0 0 -1rem 0);
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 1.6rem;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .card-projeto {
+        flex: 0 0 85%;
+        width: 85%;
+        scroll-snap-align: start;
+      }
+    }
+  }
+
+  .card-projeto {
+    background-color: white;
+    border-radius: 1.2rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.1);
+
+      .project-image {
+        transform: scale(1.05);
+      }
+    }
+
+    .project-image-container {
+      height: 20rem;
+      overflow: hidden;
+
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+    }
+
+    .project-content {
+      padding: 2.4rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      .project-tech-tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-bottom: 1.2rem;
+
+        .project-tech-tag {
+          background-color: #eef2ff;
+          color: #4338ca;
+          padding: 0.4rem 1.2rem;
+          border-radius: 9999px;
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+      }
+
+      .project-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: #11182c;
+        margin-bottom: 0.8rem;
+      }
+
+      .project-description {
+        color: #6b7280;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        flex-grow: 1;
+        margin-bottom: 2.4rem;
+      }
+
+      .project-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.6rem;
+
+        .open-modal-button {
+          flex-grow: 1;
+        }
+
+        .project-external-links {
+          display: flex;
+          gap: 1.2rem;
+
+          a {
+            font-size: 2.2rem;
+            color: #9ca3af;
+            transition: color 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+              color: #e53e3e;
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-.card-projeto {
-  background-color: white;
-  border-radius: 1.2rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
+// Botão global — permanece fora da seção para reuso
+.button.primary-button {
+  background-color: #e53e3e;
+  color: white;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background-color: #c53030;
+    transform: translateY(-2px);
   }
-
-  img.project-image {
-    width: 100%;
-    height: 19.2rem;
-    object-fit: cover;
-  }
-
-  .project-content {
-    padding: 2.4rem;
-  }
-
-  .project-title {
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-  }
-
-  .project-description {
-    color: #4b5563;
-    margin-bottom: 1.6rem;
-    font-size: 1.4rem;
-  }
-
-  .project-tech-tags-container {
-    margin-bottom: 1.6rem;
-  }
-}
-
-.project-tech-tag {
-  background-color: #e9ecef;
-  color: #495057;
-  padding: 0.4rem 1.2rem;
-  border-radius: 9999px;
-  font-size: 1.2rem;
-  margin-right: 0.8rem;
-  margin-bottom: 0.8rem;
-  display: inline-block;
 }

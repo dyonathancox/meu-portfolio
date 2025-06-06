@@ -118,6 +118,7 @@
               class="perfil-sobre"
             />
           </div>
+
           <div class="texto-sobre">
             <p>
               Olá! Sou Dyonathan, um desenvolvedor apaixonado por criar
@@ -132,16 +133,40 @@
               poder de transformar ideias em realidade, e estou animado para
               contribuir com essa transformação.
             </p>
-            <div class="social-links">
-              <a href="https://github.com/dyonathancox" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/dyonathan-cox/"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+            <div class="sobre-info-cards">
+              <div class="info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Localização</strong>
+                  <span>Itapeva, SP</span>
+                </div>
+              </div>
+              <div class="info-card">
+                <i class="fas fa-paper-plane"></i>
+                <div>
+                  <strong>Disponibilidade</strong>
+                  <span>Aberta a Projetos</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sobre-botoes-container">
+              <div class="social-links">
+                <a href="https://github.com/dyonathancox" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/dyonathan-cox/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              </div>
+              <a href="./assets/curriculo.pdf" class="cta-button" download>
+                Download CV
+                <i class="fas fa-download"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -149,51 +174,57 @@
 
       <section id="habilidades">
         <div class="layout-width">
-          <h2 class="section-title">Minhas Habilidades</h2>
+          <h2 class="section-title">Minhas Skills</h2>
+
+          <h3 class="habilidades-categoria-titulo">Front-End</h3>
           <div class="grid-habilidades">
-            <div class="habilidade-card">
+            <div class="habilidade-card html">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
                 alt="HTML5"
               />
               <h3>HTML5</h3>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-card css">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
                 alt="CSS3"
               />
               <h3>CSS3</h3>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-card js">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                 alt="JavaScript"
               />
               <h3>JavaScript</h3>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-card react">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                 alt="React"
               />
               <h3>React</h3>
             </div>
-            <div class="habilidade-card">
+          </div>
+
+          <h3 class="habilidades-categoria-titulo">Back-End & Ferramentas</h3>
+          <div class="grid-habilidades">
+            <div class="habilidade-card nodejs">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
                 alt="Node.js"
               />
               <h3>Node.js</h3>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-card git">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
                 alt="Git"
               />
               <h3>Git</h3>
             </div>
-            <div class="habilidade-card">
+            <div class="habilidade-card figma">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
                 alt="Figma"
@@ -204,84 +235,11 @@
         </div>
       </section>
 
-      <section id="projetos" class="layout-width">
-        <h2 class="section-title">Meus Projetos</h2>
-        <div class="grid-projetos">
-          <div class="card-projeto">
-            <img
-              src="https://placehold.co/600x400/e53e3e/ffffff?text=Projeto+1"
-              alt="Imagem do Projeto 1"
-              class="project-image"
-            />
-            <div class="project-content">
-              <h3 class="project-title">Nome do Projeto 1</h3>
-              <p class="project-description">
-                Uma breve descrição do que este projeto faz e seu principal
-                objetivo. Mantenha conciso.
-              </p>
-              <div class="project-tech-tags-container">
-                <span class="project-tech-tag">React</span>
-                <span class="project-tech-tag">Node.js</span>
-                <span class="project-tech-tag">MongoDB</span>
-              </div>
-              <button
-                class="button secondary-button open-modal-button"
-                data-project-id="1"
-              >
-                Ver Detalhes
-              </button>
-            </div>
-          </div>
-          <div class="card-projeto">
-            <img
-              src="https://placehold.co/600x400/c53030/ffffff?text=Projeto+2"
-              alt="Imagem do Projeto 2"
-              class="project-image"
-            />
-            <div class="project-content">
-              <h3 class="project-title">Nome do Projeto 2</h3>
-              <p class="project-description">
-                Outro projeto interessante com foco em solucionar um problema
-                específico através da tecnologia.
-              </p>
-              <div class="project-tech-tags-container">
-                <span class="project-tech-tag">Vue.js</span>
-                <span class="project-tech-tag">Firebase</span>
-                <span class="project-tech-tag">Tailwind</span>
-              </div>
-              <button
-                class="button secondary-button open-modal-button"
-                data-project-id="2"
-              >
-                Ver Detalhes
-              </button>
-            </div>
-          </div>
-          <div class="card-projeto">
-            <img
-              src="https://placehold.co/600x400/9b2c2c/ffffff?text=Projeto+3"
-              alt="Imagem do Projeto 3"
-              class="project-image"
-            />
-            <div class="project-content">
-              <h3 class="project-title">Nome do Projeto 3</h3>
-              <p class="project-description">
-                Este projeto demonstra habilidades em design de UI/UX e
-                desenvolvimento front-end responsivo.
-              </p>
-              <div class="project-tech-tags-container">
-                <span class="project-tech-tag">HTML5</span>
-                <span class="project-tech-tag">CSS3</span>
-                <span class="project-tech-tag">JavaScript</span>
-              </div>
-              <button
-                class="button secondary-button open-modal-button"
-                data-project-id="3"
-              >
-                Ver Detalhes
-              </button>
-            </div>
-          </div>
+      <section id="projetos">
+        <div class="layout-width">
+          <h2 class="section-title">Meus Projetos</h2>
+
+          <div class="grid-projetos"></div>
         </div>
       </section>
 
@@ -310,6 +268,54 @@
             <p class="formacao-descricao">
               Breve descrição sobre o curso, principais aprendizados ou projetos
               desenvolvidos.
+            </p>
+          </div>
+
+          <div class="formacao-item">
+            <span class="formacao-icone">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
+                />
+              </svg>
+            </span>
+            <p class="formacao-data">2023</p>
+            <h3>Rocketseat - Ignite (ReactJS)</h3>
+            <p class="formacao-subtitulo">Certificado de Conclusão</p>
+            <p class="formacao-descricao">
+              Trilha de especialização em ReactJS, abordando desde conceitos
+              fundamentais até desenvolvimento de aplicações complexas com
+              Next.js, Styled Components, Testes, etc.
+            </p>
+          </div>
+
+          <div class="formacao-item">
+            <span class="formacao-icone">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
+                />
+              </svg>
+            </span>
+            <p class="formacao-data">2023</p>
+            <h3>Rocketseat - Ignite (ReactJS)</h3>
+            <p class="formacao-subtitulo">Certificado de Conclusão</p>
+            <p class="formacao-descricao">
+              Trilha de especialização em ReactJS, abordando desde conceitos
+              fundamentais até desenvolvimento de aplicações complexas com
+              Next.js, Styled Components, Testes, etc.
             </p>
           </div>
 
@@ -423,47 +429,91 @@
     </main>
 
     <footer>
-      <p>
-        &copy; <span id="currentYear"></span> Dyonathan Cox. Todos os direitos
-        reservados.
-      </p>
-      <p class="footer-subtext">Feito com CSS puro e muito café!</p>
+      <div class="footer-container layout-width">
+        <div class="footer-copyright">
+          <p>
+            &copy; <span id="currentYear">2025</span> Dyonathan Cox. Todos os
+            direitos reservados.
+          </p>
+          <p class="footer-subtext">Feito com CSS puro e muito café!</p>
+        </div>
+
+        <div class="footer-nav">
+          <div class="footer-social-links">
+            <a
+              href="https://github.com/dyonathancox"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dyonathan-cox/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" target="_blank" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
+
+    <a href="#hero" id="backToTopButton" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </a>
 
     <div id="projectModal" class="modal">
       <div class="modal-content">
         <span class="close-modal" id="closeModalButton">&times;</span>
-        <div id="modalBodyContent">
-          <h2 id="modalTitle">Título do Projeto</h2>
-          <img
-            id="modalImage"
-            src="https://placehold.co/600x350/764ba2/ffffff?text=Detalhe+Projeto"
-            alt="Imagem Detalhada do Projeto"
-          />
-          <div>
-            <h4 class="section-subtitle">Tecnologias Utilizadas:</h4>
-            <div id="modalTechs"></div>
-          </div>
-          <div class="modal-text-content">
-            <p id="modalDescription">Descrição detalhada...</p>
-            <p id="modalDetails">Mais detalhes...</p>
+
+        <div class="modal-grid-container">
+          <div class="modal-image-column">
+            <img
+              id="modalImage"
+              src="https://placehold.co/600x350/764ba2/ffffff?text=Detalhe+Projeto"
+              alt="Imagem Detalhada do Projeto"
+            />
           </div>
 
-          <div class="modal-links-container">
-            <a
-              id="modalLiveLink"
-              href="#"
-              target="_blank"
-              class="button primary-button w-auto"
-              >Ver Projeto Online</a
-            >
-            <a
-              id="modalRepoLink"
-              href="#"
-              target="_blank"
-              class="button secondary-button w-auto"
-              >Repositório GitHub</a
-            >
+          <div class="modal-text-column">
+            <h2 id="modalTitle">Título do Projeto</h2>
+
+            <div id="modalTechs"></div>
+
+            <h3 class="section-subtitle">Sobre o Projeto</h3>
+            <p id="modalDescription" class="modal-text-content">
+              Descrição detalhada do projeto, explicando seus objetivos, o
+              problema que resolve e as principais funcionalidades
+              desenvolvidas.
+            </p>
+
+            <h3 class="section-subtitle">Desafios e Aprendizados</h3>
+            <p id="modalDetails" class="modal-text-content">
+              Detalhes sobre os desafios técnicos enfrentados durante o
+              desenvolvimento e os principais aprendizados adquiridos no
+              processo.
+            </p>
+
+            <div class="modal-links-container">
+              <a
+                id="modalLiveLink"
+                href="#"
+                target="_blank"
+                class="button primary-button w-auto"
+                >Ver Projeto Online</a
+              >
+              <a
+                id="modalRepoLink"
+                href="#"
+                target="_blank"
+                class="button secondary-button w-auto"
+                >Repositório GitHub</a
+              >
+            </div>
           </div>
         </div>
       </div>

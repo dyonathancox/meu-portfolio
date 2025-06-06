@@ -4,44 +4,77 @@
   background-image: url(../assets/img/bg-1.png);
   background-size: cover;
   background-position: center;
-  padding: 6rem 0;
+  background-attachment: fixed;
+  padding: 8rem 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 24, 39, 0.5);
+    z-index: 1;
+  }
+
+  .layout-width {
+    position: relative;
+    z-index: 2;
+  }
 
   .section-title {
-    color: #e7e7e7;
-    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 3.2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .grid-habilidades {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     gap: 2.4rem;
-
-    &:after {
-      content: '';
-      grid-column: 2 / span 2;
-      height: 0;
-    }
+    padding: 0 2.4rem;
 
     .habilidade-card {
-      width: 100%;
-      max-width: 23rem;
-      margin: 0 auto;
-      padding: 2.4rem;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 1rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -1px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
+      padding: 2.4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      transition: all 0.2s ease-out;
 
       &:hover {
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        transform: translateY(-5px);
+        transform: translateY(-8px) scale(1.05);
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      &.html:hover {
+        box-shadow: 0 0 25px 5px rgba(227, 79, 38, 0.6);
+      }
+      &.css:hover {
+        box-shadow: 0 0 25px 5px rgba(21, 114, 182, 0.6);
+      }
+      &.js:hover {
+        box-shadow: 0 0 25px 5px rgba(247, 223, 30, 0.6);
+      }
+      &.react:hover {
+        box-shadow: 0 0 25px 5px rgba(97, 218, 251, 0.6);
+      }
+      &.nodejs:hover {
+        box-shadow: 0 0 25px 5px rgba(104, 159, 99, 0.6);
+      }
+      &.git:hover {
+        box-shadow: 0 0 25px 5px rgba(240, 81, 51, 0.6);
+      }
+      &.figma:hover {
+        box-shadow: 0 0 25px 5px rgba(162, 89, 255, 0.6);
       }
 
       img {
@@ -49,13 +82,62 @@
         width: 6.4rem;
         margin-bottom: 1.6rem;
         object-fit: contain;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        transform: translateZ(40px);
       }
 
       h3 {
         font-size: 1.8rem;
         font-weight: 600;
-        color: #1e293b;
+        color: #ffffff;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        transform: translateZ(30px);
       }
     }
   }
+
+  @media (max-width: 767px) {
+    padding: 6rem 0;
+
+    .section-title,
+    .habilidades-categoria-titulo {
+      padding: 0 1.6rem;
+    }
+
+    .grid-habilidades {
+      display: flex;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      gap: 1.6rem;
+      padding: 1.6rem;
+      margin: 0;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 1.6rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .habilidade-card {
+        flex: 0 0 16rem;
+        width: 16rem;
+        scroll-snap-align: start;
+      }
+    }
+  }
+}
+
+.habilidades-categoria-titulo {
+  color: #e5e7eb;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.8rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }

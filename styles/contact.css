@@ -1,21 +1,44 @@
 #contato {
-  background-color: #292c34;
+  background-color: #111827;
   color: #f9fafb;
-  padding: 6rem 2rem;
+  padding: 10rem 2rem;
+  position: relative;
+  overflow: hidden;
 
-  p {
-    font-size: 1.8rem;
-    line-height: 1.6;
-    color: #d1d5db;
-    max-width: 60rem;
-    margin: 0 auto 4rem auto;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    z-index: 1;
+    background: radial-gradient(circle at 20% 20%, #e53e3e 0%, transparent 30%),
+                radial-gradient(circle at 80% 30%, #60a5fa 0%, transparent 30%),
+                radial-gradient(circle at 50% 70%, #58154a 0%, transparent 35%);
+    opacity: 0.2;
+    animation: move-aurora 60s linear infinite;
   }
 
   .contato-container {
+    position: relative;
+    z-index: 2;
     max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     text-align: center;
+  }
+
+  .section-title {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: #d1d5db;
+    max-width: 60rem;
+    margin: 0 auto 4rem auto;
   }
 
   .contato-links {
@@ -26,8 +49,9 @@
   }
 
   .contato-card {
-    background-color: #1f2937;
-    border: 1px solid #374151;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 0.8rem;
     padding: 1.6rem 2.4rem;
     display: flex;
@@ -36,15 +60,23 @@
     text-decoration: none;
     color: #f9fafb;
     min-width: 280px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    transform-style: preserve-3d;
 
     &:hover {
-      background-color: #374151;
-      transform: translateY(-4px);
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-5px);
+
+      .contato-card-icone {
+        transform: translateZ(20px) scale(1.1);
+      }
     }
 
     .contato-card-icone {
-      color: #60a5fa;
+      color: #93c5fd;
+      transition: transform 0.3s ease;
+      transform: translateZ(20px);
     }
 
     .contato-card-texto {
@@ -52,13 +84,29 @@
         font-size: 1.8rem;
         font-weight: 600;
         margin: 0;
-        color: #f9fafb;
+        color: #ffffff;
+        text-align: left;
       }
 
       span {
         font-size: 1.4rem;
         color: #9ca3af;
+        text-align: left;
       }
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 8rem 2rem;
+
+    .contato-links {
+      gap: 1.6rem;
+    }
+  }
+}
+
+@keyframes move-aurora {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-25%, -25%) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
 }

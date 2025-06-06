@@ -43,3 +43,43 @@
     font-size: var(--font-base);
   }
 }
+#backToTopButton {
+  position: fixed; /* Fica fixo na tela */
+  bottom: 3rem;
+  right: 3rem;
+
+  /* Aparência do botão */
+  background-color: #e53e3e;
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  /* Estado inicial: escondido e fora da tela */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  /* Animação suave */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease,
+    background-color 0.3s ease;
+  z-index: 100;
+}
+
+#backToTopButton:hover {
+  background-color: #c53030;
+  transform: translateY(-2px) scale(1.05); /* Pequeno pulo no hover */
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar o botão */
+#backToTopButton.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
