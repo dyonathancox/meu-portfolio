@@ -425,3 +425,29 @@ document.addEventListener('DOMContentLoaded', () => {
   init();
   animate();
 });
+
+const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+
+// Reutilizamos a constante 'sections' que você já declarou antes
+if (sections.length > 0 && mobileMenuLinks.length > 0) {
+  const mobileObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          mobileMenuLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.5 } // Mesma configuração do observer do desktop
+  );
+
+  sections.forEach((section) => {
+    mobileObserver.observe(section);
+  });
+}
