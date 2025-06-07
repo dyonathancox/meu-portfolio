@@ -1,634 +1,457 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth-html">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio Dyonathan Cox</title>
 
-    <link rel="stylesheet" href="styles/imports.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio Dyonathan Cox</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="stylesheet" href="styles/imports.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Inconsolata:wght@400;700&family=Maven+Pro:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <header id="main-header">
-      <div class="header-content">
-        <a href="#hero" class="logo">Dyonathan Cox</a>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet" />
 
-        <nav>
-          <ul>
-            <li><a href="#hero" class="nav-link">Início</a></li>
-            <li><a href="#sobre" class="nav-link">Sobre</a></li>
-            <li><a href="#projetos" class="nav-link">Projetos</a></li>
-            <li><a href="#formacao" class="nav-link">Formação</a></li>
-            <li><a href="#contato" class="nav-link">Contato</a></li>
-          </ul>
-        </nav>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Inconsolata:wght@400;700&family=Maven+Pro:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-        <button id="mobile-menu-button" aria-label="Abrir menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
+<body>
+  <header id="main-header">
+    <div class="header-content">
+      <a href="#hero" class="logo">Dyonathan Cox</a>
 
-    <div id="mobile-menu">
-      <ul>
-        <li><a href="#hero">Início</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#formacao">Formação</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+      <nav>
+        <ul>
+          <li><a href="#hero" class="nav-link">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li><a href="#formacao" class="nav-link">Formação</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button id="mobile-menu-button" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <section id="hero" class="hero-custom-design">
-      <img
-        class="perfil"
-        src="assets/img/perfil.png"
-        alt="Foto de perfil Dyonathan Cox"
-      />
-      <div class="top-intro">
-        <span>
-          <p>Hello World! Meu nome é <strong>Dyonathan Cox</strong> e sou</p>
-          <h1>Desenvolvedor Front-End</h1>
-        </span>
+  <div id="mobile-menu">
+    <ul>
+      <li><a href="#hero">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+
+  <section id="hero" class="hero-custom-design">
+    <img class="perfil" src="assets/img/perfil.png" alt="Foto de perfil Dyonathan Cox" />
+    <div class="top-intro">
+      <span>
+        <p>Hello World! Meu nome é <strong>Dyonathan Cox</strong> e sou</p>
+        <h1>Desenvolvedor Front-End</h1>
+      </span>
+    </div>
+    <div class="grupo-2">
+      <p>
+        Onde a inovação encontra o código. Transformando ideias em plataformas interativas que não apenas funcionam, mas
+        que são projetadas para definir o futuro de um negócio.
+      </p>
+      <div class="cards-tecno">
+        <span class="tecno"><i class="fa-brands fa-github"></i> GitHub</span>
+        <span class="tecno"><i class="fa-brands fa-html5" style="color: #e3646e"></i>
+          HTML</span>
+        <span class="tecno"><i class="fa-brands fa-css3-alt" style="color: #3996db"></i>
+          CSS</span>
+        <span class="tecno"><i class="fa-brands fa-js" style="color: #ffd43b"></i>
+          JavaScript</span>
+        <span class="tecno"><i class="fa-brands fa-react" style="color: #61dafb"></i>
+          React</span>
+        <span class="tecno"><i class="fa-brands fa-node-js" style="color: #82bc4f"></i>
+          Node.js</span>
       </div>
-      <div class="grupo-2">
-        <p>
-          Transformo necessidades em aplicações reais, evolventes e funcionais.
-          Desenvolvo sistemas através da minha paixão pela tecnologia,
-          contribuindo com soluções inovadoras e eficazes para desafios
-          complexos.
-        </p>
-        <div class="cards-tecno">
-          <span class="tecno"><i class="fa-brands fa-github"></i> GitHub</span>
-          <span class="tecno"
-            ><i class="fa-brands fa-html5" style="color: #e3646e"></i>
-            HTML</span
-          >
-          <span class="tecno"
-            ><i class="fa-brands fa-css3-alt" style="color: #3996db"></i>
-            CSS</span
-          >
-          <span class="tecno"
-            ><i class="fa-brands fa-js" style="color: #ffd43b"></i>
-            JavaScript</span
-          >
-          <span class="tecno"
-            ><i class="fa-brands fa-react" style="color: #61dafb"></i>
-            React</span
-          >
-          <span class="tecno"
-            ><i class="fa-brands fa-node-js" style="color: #82bc4f"></i>
-            Node.js</span
-          >
+      <a href="#sobre" class="arrow"><img src="assets/img/arrow.svg" alt="Seta para baixo" /></a>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="sobre" class="layout-width">
+      <h2 class="section-title">Sobre Mim</h2>
+      <div class="grid-sobre">
+        <div class="sobre-imagem-container">
+          <img src="assets/img/perfil.png" alt="Foto de Dyonathan Cox" class="perfil-sobre" />
         </div>
-        <a href="#sobre" class="arrow"
-          ><img src="assets/img/arrow.svg" alt="Seta para baixo"
-        /></a>
+
+        <div class="texto-sobre">
+          <p>
+            Olá, sou Dyonathan. Como Desenvolvedor Front-end, minha paixão é construir a ponte entre o design e a
+            funcionalidade para criar experiências digitais que sejam intuitivas e um verdadeiro prazer de usar.
+            Acredito que um ótimo desenvolvedor é, acima de tudo, um solucionador de problemas. É essa filosofia que me
+            leva a ir além do Front-end: mergulho no Back-end quando necessário, não para ser um generalista, mas para
+            garantir que a visão do projeto ganhe vida de forma completa e coesa.
+          </p>
+          <p>
+            É fora do código que recarrego minhas energias. Minhas paixões
+            pelo universo geek, games e música me ensinam a encarar os
+            desafios com bom humor e uma perspectiva diferente. Aprendi com
+            eles a ver cada bug não como um problema, mas como a próxima fase
+            de um jogo a ser vencida. É essa leveza que trago para a
+            colaboração em equipe e para a busca de soluções criativas.
+          </p>
+
+          <div class="sobre-info-cards">
+            <div class="info-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Localização</strong>
+                <span>Itapeva, SP</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-paper-plane"></i>
+              <div>
+                <strong>Disponibilidade</strong>
+                <span>Aberta a Projetos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sobre-botoes-container">
+            <div class="social-links">
+              <a href="https://github.com/dyonathancox" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/dyonathan-cox/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <a href="./assets/curriculo.pdf" class="button primary-button" download>
+              Download CV
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <main class="container">
-      <section id="sobre" class="layout-width">
-        <h2 class="section-title">Sobre Mim</h2>
-        <div class="grid-sobre">
-          <div class="sobre-imagem-container">
-            <img
-              src="assets/img/perfil.png"
-              alt="Foto de Dyonathan Cox"
-              class="perfil-sobre"
-            />
+    <section id="habilidades">
+      <div class="layout-width">
+        <h2 class="section-title">Minhas Skills</h2>
+
+        <h3 class="habilidades-categoria-titulo">Front-End</h3>
+        <div class="grid-habilidades">
+          <div class="habilidade-card html">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            <h3>HTML5</h3>
           </div>
-
-          <div class="texto-sobre">
-            <p>
-              Olá! Sou Dyonathan, um Desenvolvedor Front-end que ama construir
-              pontes entre o design e a funcionalidade. Minha missão é criar
-              experiências digitais que não apenas funcionem bem, mas que também
-              sejam um prazer de usar.
-            </p>
-            <p>
-              Com uma base sólida em Front-end, minha paixão pela tecnologia me
-              impulsiona a entender o ecossistema completo. Por isso, quando um
-              desafio exige, vou além das minhas fronteiras e exploro o Back-end
-              para dar vida aos projetos. Acredito que um ótimo desenvolvedor é,
-              acima de tudo, um solucionador de problemas incansável.
-            </p>
-            <p>
-              É fora do código que recarrego minhas energias. Minhas paixões
-              pelo universo geek, games e música me ensinam a encarar os
-              desafios com bom humor e uma perspectiva diferente. Aprendi com
-              eles a ver cada bug não como um problema, mas como a próxima fase
-              de um jogo a ser vencida. É essa leveza que trago para a
-              colaboração em equipe e para a busca de soluções criativas.
-            </p>
-
-            <div class="sobre-info-cards">
-              <div class="info-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>
-                  <strong>Localização</strong>
-                  <span>Itapeva, SP</span>
-                </div>
-              </div>
-              <div class="info-card">
-                <i class="fas fa-paper-plane"></i>
-                <div>
-                  <strong>Disponibilidade</strong>
-                  <span>Aberta a Projetos</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="sobre-botoes-container">
-              <div class="social-links">
-                <a href="https://github.com/dyonathancox" target="_blank"
-                  ><i class="fab fa-github"></i
-                ></a>
-                <a
-                  href="https://www.linkedin.com/in/dyonathan-cox/"
-                  target="_blank"
-                  ><i class="fab fa-linkedin"></i
-                ></a>
-                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-              </div>
-              <a
-                href="./assets/curriculo.pdf"
-                class="button primary-button"
-                download
-              >
-                Download CV
-                <i class="fas fa-download"></i>
-              </a>
-            </div>
+          <div class="habilidade-card css">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            <h3>CSS3</h3>
+          </div>
+          <div class="habilidade-card js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript" />
+            <h3>JavaScript</h3>
+          </div>
+          <div class="habilidade-card react">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <h3>React</h3>
           </div>
         </div>
-      </section>
 
-      <section id="habilidades">
-        <div class="layout-width">
-          <h2 class="section-title">Minhas Skills</h2>
-
-          <h3 class="habilidades-categoria-titulo">Front-End</h3>
-          <div class="grid-habilidades">
-            <div class="habilidade-card html">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                alt="HTML5"
-              />
-              <h3>HTML5</h3>
-            </div>
-            <div class="habilidade-card css">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                alt="CSS3"
-              />
-              <h3>CSS3</h3>
-            </div>
-            <div class="habilidade-card js">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                alt="JavaScript"
-              />
-              <h3>JavaScript</h3>
-            </div>
-            <div class="habilidade-card react">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                alt="React"
-              />
-              <h3>React</h3>
-            </div>
+        <h3 class="habilidades-categoria-titulo">Back-End & Ferramentas</h3>
+        <div class="grid-habilidades">
+          <div class="habilidade-card nodejs">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <h3>Node.js</h3>
           </div>
-
-          <h3 class="habilidades-categoria-titulo">Back-End & Ferramentas</h3>
-          <div class="grid-habilidades">
-            <div class="habilidade-card nodejs">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                alt="Node.js"
-              />
-              <h3>Node.js</h3>
-            </div>
-            <div class="habilidade-card git">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                alt="Git"
-              />
-              <h3>Git</h3>
-            </div>
-            <div class="habilidade-card figma">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                alt="Figma"
-              />
-              <h3>Figma</h3>
-            </div>
+          <div class="habilidade-card git">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+            <h3>Git</h3>
           </div>
-        </div>
-      </section>
-
-      <section id="projetos">
-        <div class="layout-width">
-          <h2 class="section-title">Meus Projetos</h2>
-
-          <div class="grid-projetos"></div>
-        </div>
-      </section>
-
-      <section id="formacao">
-        <h2 class="section-title">Formação & Cursos</h2>
-        <div class="formacao-container">
-          <!--Faculdade-->
-          <div class="formacao-item">
-            <span class="formacao-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
-                />
-              </svg>
-            </span>
-            <p class="formacao-data">Jan 2018 - Jul 2019</p>
-            <h3>Universidade Paulista (UNIP)</h3>
-            <p class="formacao-subtitulo">
-              Tecnólogo em Análise e Desenvolvimento de Sistemas
-            </p>
-            <p class="formacao-descricao">
-              Formação focada em desenvolvimento de software, banco de dados,
-              lógica de programação e engenharia de requisitos.
-            </p>
-          </div>
-
-          <div class="formacao-item">
-            <span class="formacao-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
-                />
-              </svg>
-            </span>
-            <p class="formacao-data">Jan 2022 - Em andamento</p>
-            <h3>Centro Universitário Internacional (UNINTER)</h3>
-            <p class="formacao-subtitulo">Bacharel em Engenharia de Software</p>
-            <p class="formacao-descricao">
-              Curso com foco em arquitetura de software, engenharia de
-              requisitos, testes automatizados e práticas ágeis.
-            </p>
-          </div>
-
-          <!--Cursos-->
-
-          <div class="formacao-item">
-            <span class="formacao-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
-                />
-              </svg>
-            </span>
-            <p class="formacao-data">Concluído em 2022</p>
-            <h3>Digital Innovation One</h3>
-            <p class="formacao-subtitulo">
-              Bootcamp Santander Full Stack Developer
-            </p>
-            <p class="formacao-descricao">
-              Formação prática em tecnologias como JavaScript, Node.js, React e
-              banco de dados, com foco em desenvolvimento full stack.
-            </p>
-          </div>
-
-          <div class="formacao-item">
-            <span class="formacao-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
-                />
-              </svg>
-            </span>
-            <p class="formacao-data">2023</p>
-            <h3>Digital Innovation One</h3>
-            <p class="formacao-subtitulo">Git e GitHub: Controle de Versões</p>
-            <p class="formacao-descricao">
-              Introdução ao versionamento de código com Git, uso de branches,
-              pull requests e colaboração em projetos via GitHub.
-            </p>
-          </div>
-
-          <div class="formacao-item">
-            <span class="formacao-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
-                />
-              </svg>
-            </span>
-            <p class="formacao-data">2024 - 2025 (em andamento)</p>
-            <h3>Rocketseat</h3>
-            <p class="formacao-subtitulo">Formação Explorer</p>
-            <p class="formacao-descricao">
-              Formação em desenvolvimento full stack com foco em JavaScript,
-              React, Node.js, HTML, CSS, API REST, SQLite e GitHub.
-            </p>
-          </div>
-
-          <div class="formacao-item">
-            <span class="formacao-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
-                />
-              </svg>
-            </span>
-            <p class="formacao-data">Início em 2025 - Em andamento</p>
-            <h3>Coursera</h3>
-            <p class="formacao-subtitulo">Google UX Design</p>
-            <p class="formacao-descricao">
-              Curso com foco em design centrado no usuário, prototipagem, testes
-              de usabilidade e ferramentas como Figma e Adobe XD.
-            </p>
-          </div>
-
-          <div class="formacao-item">
-            <span class="formacao-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
-                />
-              </svg>
-            </span>
-            <p class="formacao-data">2025 (em andamento)</p>
-            <h3>Rocketseat</h3>
-            <p class="formacao-subtitulo">Formação Full Stack</p>
-            <p class="formacao-descricao">
-              Formação avançada em tecnologias web modernas, com foco em
-              projetos práticos usando React, Node.js, TypeScript e testes com
-              Jest.
-            </p>
-          </div>
-
-          <div class="formacao-item">
-            <span class="formacao-icone">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"
-                />
-              </svg>
-            </span>
-            <p class="formacao-data">2025</p>
-            <h3>Digital Innovation One</h3>
-            <p class="formacao-subtitulo">
-              Santander Bootcamp Back-End com Java
-            </p>
-            <p class="formacao-descricao">
-              Bootcamp focado em Java com Spring Boot, criação de APIs REST,
-              boas práticas como SOLID, testes e projetos back-end reais.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contato">
-        <canvas id="contact-canvas"></canvas>
-        <h2 class="section-title">Vamos Conversar?</h2>
-        <div class="contato-container">
-          <p>
-            Estou sempre aberto a novas oportunidades, colaborações ou apenas um
-            bom bate-papo sobre tecnologia. Será um prazer me conectar com você!
-          </p>
-
-          <div class="contato-links">
-            <a href="mailto:seuemail@example.com" class="contato-card">
-              <span class="contato-card-icone">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  width="28"
-                  height="28"
-                >
-                  <path
-                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-                  />
-                </svg>
-              </span>
-              <div class="contato-card-texto">
-                <h3>Email</h3>
-                <span>seuemail@example.com</span>
-              </div>
-            </a>
-
-            <a
-              href="https://linkedin.com/in/seu-usuario"
-              target="_blank"
-              class="contato-card"
-            >
-              <span class="contato-card-icone">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  width="28"
-                  height="28"
-                >
-                  <path
-                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.5 7H6v10h2.5V7zM7.25 5.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5zM18 17h-2.5v-4.5c0-1.5-1-2.5-2-2.5s-1.5 1-1.5 2.5V17H9.5V7H12v1.5a3.5 3.5 0 0 1 3-1.5c2 0 3 1.5 3 4.5V17z"
-                  />
-                </svg>
-              </span>
-              <div class="contato-card-texto">
-                <h3>LinkedIn</h3>
-                <span>/seu-usuario</span>
-              </div>
-            </a>
-
-            <a
-              href="https://github.com/seu-usuario"
-              target="_blank"
-              class="contato-card"
-            >
-              <span class="contato-card-icone">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  width="28"
-                  height="28"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              <div class="contato-card-texto">
-                <h3>GitHub</h3>
-                <span>/seu-usuario</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer-container layout-width">
-        <div class="footer-copyright">
-          <p>
-            &copy; <span id="currentYear">2025</span> Dyonathan Cox. Todos os
-            direitos reservados.
-          </p>
-          <p class="footer-subtext">Feito com CSS puro e muito café!</p>
-        </div>
-
-        <div class="footer-nav">
-          <div class="footer-social-links">
-            <a
-              href="https://github.com/dyonathancox"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/dyonathan-cox/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" target="_blank" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
+          <div class="habilidade-card figma">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+            <h3>Figma</h3>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <a href="#hero" id="backToTopButton" aria-label="Voltar ao topo">
-      <i class="fas fa-arrow-up"></i>
-    </a>
+    <section id="projetos">
+      <div class="layout-width">
+        <h2 class="section-title">Meus Projetos</h2>
 
-    <div id="projectModal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal" id="closeModalButton">&times;</span>
+        <div class="grid-projetos"></div>
+      </div>
+    </section>
 
-        <div class="modal-grid-container">
-          <div class="modal-image-column">
-            <img
-              id="modalImage"
-              src="https://placehold.co/600x350/764ba2/ffffff?text=Detalhe+Projeto"
-              alt="Imagem Detalhada do Projeto"
-            />
-          </div>
+    <section id="formacao">
+      <h2 class="section-title">Formação & Cursos</h2>
+      <div class="formacao-container">
+        <!--Faculdade-->
+        <div class="formacao-item">
+          <span class="formacao-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
+          </span>
+          <p class="formacao-data">Jan 2018 - Jul 2019</p>
+          <h3>
+            Tecnólogo em Análise e Desenvolvimento de Sistemas
+          </h3>
+          <p class="formacao-subtitulo">
+            Universidade Paulista (UNIP)
+          </p>
+          <p class="formacao-descricao">
+            Formação focada em desenvolvimento de software, banco de dados,
+            lógica de programação e engenharia de requisitos.
+          </p>
+        </div>
 
-          <div class="modal-text-column">
-            <h2 id="modalTitle">Título do Projeto</h2>
+        <div class="formacao-item">
+          <span class="formacao-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
+          </span>
+          <p class="formacao-data">Jan 2022 - Em andamento</p>
+          <h3>Bacharel em Engenharia de Software</h3>
+          <p class="formacao-subtitulo">Centro Universitário Internacional (UNINTER)</p>
+          <p class="formacao-descricao">
+            Curso com foco em arquitetura de software, engenharia de
+            requisitos, testes automatizados e práticas ágeis.
+          </p>
+        </div>
 
-            <div id="modalTechs"></div>
+        <!--Cursos-->
 
-            <h3 class="section-subtitle">Sobre o Projeto</h3>
-            <p id="modalDescription" class="modal-text-content">
-              Descrição detalhada do projeto, explicando seus objetivos, o
-              problema que resolve e as principais funcionalidades
-              desenvolvidas.
-            </p>
+        <div class="formacao-item">
+          <span class="formacao-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
+          </span>
+          <p class="formacao-data">Concluído em 2022</p>
+          <h3>Bootcamp Santander Full Stack Developer</h3>
+          <p class="formacao-subtitulo">
+            Digital Innovation One
+          </p>
+          <p class="formacao-descricao">
+            Formação prática em tecnologias como JavaScript, Node.js, React e
+            banco de dados, com foco em desenvolvimento full stack.
+          </p>
+        </div>
 
-            <h3 class="section-subtitle">Desafios e Aprendizados</h3>
-            <p id="modalDetails" class="modal-text-content">
-              Detalhes sobre os desafios técnicos enfrentados durante o
-              desenvolvimento e os principais aprendizados adquiridos no
-              processo.
-            </p>
+        <div class="formacao-item">
+          <span class="formacao-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
+          </span>
+          <p class="formacao-data">2023</p>
+          <h3>Git e GitHub: Controle de Versões</h3>
+          <p class="formacao-subtitulo">Curso em vídeo</p>
+          <p class="formacao-descricao">
+            Introdução ao versionamento de código com Git, uso de branches,
+            pull requests e colaboração em projetos via GitHub.
+          </p>
+        </div>
 
-            <div class="modal-links-container">
-              <a
-                id="modalLiveLink"
-                href="#"
-                target="_blank"
-                class="button primary-button"
-                >Ver Projeto Online</a
-              >
-              <a
-                id="modalRepoLink"
-                href="#"
-                target="_blank"
-                class="button primary-button"
-                >Repositório GitHub</a
-              >
+        <div class="formacao-item">
+          <span class="formacao-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
+          </span>
+          <p class="formacao-data">2024 - 2025 (em andamento)</p>
+          <h3>Formação Explorer</h3>
+          <p class="formacao-subtitulo">Rocketseat</p>
+          <p class="formacao-descricao">
+            Formação em desenvolvimento full stack com foco em JavaScript,
+            React, Node.js, HTML, CSS, API REST, SQLite e GitHub.
+          </p>
+        </div>
+
+        <div class="formacao-item">
+          <span class="formacao-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
+          </span>
+          <p class="formacao-data">Início em 2025 - Em andamento</p>
+          <h3>Google UX Design</h3>
+          <p class="formacao-subtitulo">Coursera</p>
+          <p class="formacao-descricao">
+            Curso com foco em design centrado no usuário, prototipagem, testes
+            de usabilidade e ferramentas como Figma e Adobe XD.
+          </p>
+        </div>
+
+        <div class="formacao-item">
+          <span class="formacao-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
+          </span>
+          <p class="formacao-data">2025 (em andamento)</p>
+          <h3>Formação Full Stack</h3>
+          <p class="formacao-subtitulo">Rocketseat</p>
+          <p class="formacao-descricao">
+            Formação avançada em tecnologias web modernas, com foco em
+            projetos práticos usando React, Node.js, TypeScript e testes com
+            Jest.
+          </p>
+        </div>
+
+        <div class="formacao-item">
+          <span class="formacao-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+              <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+            </svg>
+          </span>
+          <p class="formacao-data">2025</p>
+          <h3>Santander Bootcamp Back-End com Java</h3>
+          <p class="formacao-subtitulo">
+            Digital Innovation One
+          </p>
+          <p class="formacao-descricao">
+            Bootcamp focado em Java com Spring Boot, criação de APIs REST,
+            boas práticas como SOLID, testes e projetos back-end reais.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <canvas id="contact-canvas"></canvas>
+      <h2 class="section-title">Vamos Conversar?</h2>
+      <div class="contato-container">
+        <p>
+          Estou sempre aberto a novas oportunidades, colaborações ou apenas um
+          bom bate-papo sobre tecnologia. Será um prazer me conectar com você!
+        </p>
+
+        <div class="contato-links">
+          <a href="mailto:dyonathamcox@gmail.com" class="contato-card">
+            <span class="contato-card-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </span>
+            <div class="contato-card-texto">
+              <h3>Email</h3>
+              <span>dyonathamcox@gmail.com</span>
             </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/dyonathan-cox/" target="_blank" class="contato-card">
+            <span class="contato-card-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.5 7H6v10h2.5V7zM7.25 5.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5zM18 17h-2.5v-4.5c0-1.5-1-2.5-2-2.5s-1.5 1-1.5 2.5V17H9.5V7H12v1.5a3.5 3.5 0 0 1 3-1.5c2 0 3 1.5 3 4.5V17z" />
+              </svg>
+            </span>
+            <div class="contato-card-texto">
+              <h3>LinkedIn</h3>
+              <span>/Dyonathan Cox</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/dyonathancox" target="_blank" class="contato-card">
+            <span class="contato-card-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                <path fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+            <div class="contato-card-texto">
+              <h3>GitHub</h3>
+              <span>/Dyonathan Cox</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container layout-width">
+      <div class="footer-copyright">
+        <p>
+          &copy; <span id="currentYear">2025</span> Dyonathan Cox. Todos os
+          direitos reservados.
+        </p>
+        <p class="footer-subtext">Desenvolvido com pixels, código e muito café.</p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-social-links">
+          <a href="https://github.com/dyonathancox" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/dyonathan-cox/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#hero" id="backToTopButton" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModalButton">&times;</span>
+
+      <div class="modal-grid-container">
+        <div class="modal-image-column">
+          <img id="modalImage" src="https://placehold.co/600x350/764ba2/ffffff?text=Detalhe+Projeto"
+            alt="Imagem Detalhada do Projeto" />
+        </div>
+
+        <div class="modal-text-column">
+          <h2 id="modalTitle">Título do Projeto</h2>
+
+          <div id="modalTechs"></div>
+
+          <h3 class="section-subtitle">Sobre o Projeto</h3>
+          <p id="modalDescription" class="modal-text-content">
+            Descrição detalhada do projeto, explicando seus objetivos, o
+            problema que resolve e as principais funcionalidades
+            desenvolvidas.
+          </p>
+
+          <h3 class="section-subtitle">Desafios e Aprendizados</h3>
+          <p id="modalDetails" class="modal-text-content">
+            Detalhes sobre os desafios técnicos enfrentados durante o
+            desenvolvimento e os principais aprendizados adquiridos no
+            processo.
+          </p>
+
+          <div class="modal-links-container">
+            <a id="modalLiveLink" href="#" target="_blank" class="button primary-button">Ver Projeto Online</a>
+            <a id="modalRepoLink" href="#" target="_blank" class="button primary-button">Repositório GitHub</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="assets/index.js"></script>
-  </body>
+  <script src="assets/index.js"></script>
+</body>
+
 </html>
